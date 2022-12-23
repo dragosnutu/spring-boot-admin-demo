@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-demo
+  labels:
+    app: admin-demo
+spec:
+  clusterIP: None
+  selector:
+    app: admin-demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-demo
+  labels:
+    app: admin-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-demo
+  template:
+    metadata:
+      labels:
+        app: admin-demo
+    spec:
+      containers:
+      - name: admin-demo
+        image: admin-demo

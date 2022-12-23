@@ -1,0 +1,21 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: spring-boot-admin-demo
+build:
+  artifacts:
+    - image: admin-demo
+      jib: { }
+
+manifests:
+  kustomize:
+    paths:
+      - k8s
+
+portForward:
+  - resourceType: service
+    resourceName: admin-demo
+    port: 8180
+  - resourceType: service
+    resourceName: admin-demo
+    port: 8181

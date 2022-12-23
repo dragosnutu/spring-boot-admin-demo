@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 @EnableScheduling
 @RestController
-public class DemoApplication {
+public class AdminDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(AdminDemoApplication.class, args);
     }
 
 
