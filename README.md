@@ -25,7 +25,10 @@ You can then open http://localhost:8180 to verify the admin ui.
 
 ## Current issues
 
-If you run both admin and gateway demos you'll see that if you start and stop the gateway project admin will not refresh
-the app list.
-It detects that gateway service is down. After you start it again it seems that it never comes back in.
-If you restart admin service it will refresh the app list, and you'll see gateway up again.
+1. Start admin project see - https://github.com/dragosnutu/spring-boot-admin-demo
+2. Start gateway project see - https://github.com/dragosnutu/spring-boot-gateway-demo
+3. Check admin UI, and you'll see it detects the gateway service
+4. Stop gateway and wait a bit like 1 minute.
+5. Admin UI detects that gateway is down.
+6. Start gateway again
+7. Admin UI will never refresh the gateway app to status UP it will remain down.
